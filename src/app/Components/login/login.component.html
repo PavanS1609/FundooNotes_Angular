@@ -1,0 +1,57 @@
+<div class="Form">
+    <div class="form-container">
+        <h3 style="text-align: center;">
+            <span style="color:dodgerblue;">F</span>
+            <span style="color: red;">u</span>
+            <span style="color:yellow;">n</span>
+            <span style="color: dodgerblue;">d</span>
+            <span style="color:limegreen;">o</span>
+            <span style="color:darkcyan;">o</span>
+            <span style="color:dodgerblue;"> N</span>
+            <span style="color:aquamarine;">o</span>
+            <span style="color:springgreen;">t</span>
+            <span style="color:violet;">e</span>
+            <span style="color:yellowgreen;">s</span></h3>
+        <h1 style="text-align: center;">
+            <span style="color: red;">Sign in</span></h1>
+            <h2 style="text-align: center;">
+              <span style="color: red;">U</span>se Your Fundoo Account</h2> 
+        
+        <form [formGroup]="LoginForm" (ngSubmit)="onLogin()">  
+            <div >
+             <mat-form-field appearance="outline" style="width:300px;">
+              <mat-label>Email or Phone</mat-label>
+              <input matInput placeholder="Email or Phone" formControlName="email">
+              <mat-error *ngIf="LoginForm.get('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="LoginForm.get('email')?.hasError('pattern')">
+                Please provide a valid email address
+              </mat-error>
+              </mat-form-field>
+            
+            </div>
+  <p>
+    <mat-form-field appearance="outline" style="width: 300px">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" formControlName="password">
+      <mat-error *ngIf="LoginForm.get('password')?.hasError('required')">
+              password is required
+            </mat-error>
+            <mat-error *ngIf="LoginForm.get('password')?.hasError('minlength')">
+              password is short
+            </mat-error>
+            <mat-error *ngIf="!LoginForm.get('password')?.hasError('required') && !LoginForm.get('password')?.hasError('minlength')">
+              password is invalid
+            </mat-error>
+    </mat-form-field>
+    <button (click)="redirectToForgot_Password()" style="border: 0px ;padding: 2px; color:blue;" mat-button>Forgot Password?</button>
+  </p>
+  <button (click)="redirectToRegister()" mat-button style="background-color: white;color:black;margin-right: 145px;">Register</button>
+  <button mat-raised-button style="background-color: cornflowerblue;color:white;">Login</button>
+</form>
+
+</div>
+</div>
+
+  

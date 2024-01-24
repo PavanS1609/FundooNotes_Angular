@@ -1,0 +1,50 @@
+
+.CreateNotes{
+    width: 700px;
+    min-height: 15px;
+    border-radius: 5px;
+}
+.TakeNotes{
+    display: inline-block;
+    width: 700px;
+    border-radius: 5px;
+  
+}
+.pin{
+    margin-left: 430px;
+}
+.Notes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  
+}
+.button{
+    margin-left: 300px;
+}
+.close{
+    margin-left :235px;
+}
+.title{
+        outline: none;
+        border:0px;
+        font-size: medium;
+        width: auto;
+}
+.title2{
+    outline: none;
+    border:0px;
+    font-size: medium;
+}
+
+.Note{
+    outline: none;
+    border:0px; 
+    font-size: medium;
+
+}
+.icons{
+    margin-top: 3px;
+}
+

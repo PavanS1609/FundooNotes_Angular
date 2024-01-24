@@ -1,0 +1,18 @@
+<div class="TakeNotes">
+    <div>
+        <input type="text" class="title2" placeholder="Title"  [(ngModel)]="title">
+        <button mat-button class="pin"><img src="assets/push_pin.png"></button>
+    </div>
+    <div>
+        <input type="text" class="Note" placeholder="Take a Note" [(ngModel)]="note">
+        <div class="icons">
+            <button mat-button><img src="assets/add_alert.png"></button>
+            <button mat-button><img src="assets/archive.png"></button>
+            <button mat-button><img src="assets/person_add.png"></button>
+            <button mat-button><img src="assets/palette.png"></button>
+            <button mat-button><img src="assets/image.png"></button>
+            <button mat-button><img src="assets/more_vert.png"></button>
+            <button mat-button type="submit" class="close" (click)="closeDialog()">Close</button>
+        </div>
+    </div>
+</div>

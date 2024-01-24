@@ -1,0 +1,25 @@
+<div>
+  <button mat-icon-button *ngIf="!istrash"><img src="assets/add_alert.png"></button>
+  <button mat-icon-button (click) ="onArchive()" *ngIf="!isArchive && !istrash "><img src="assets/archive.png"></button>
+  <button mat-icon-button  *ngIf="isArchive && !istrash "><img src="assets/unarchive.png"></button>
+  <button mat-icon-button *ngIf="!istrash"><img src="assets/person_add.png"></button>
+  <button mat-icon-button *ngIf="!istrash"  [matMenuTriggerFor]="paletteMenu"><img src="assets/palette.png"></button>
+  <mat-menu #paletteMenu="matMenu" [yPosition]="'below'">
+    <div class="horizontal-menu">
+          <div *ngFor="let colors of colorsArray">
+              <button mat-icon-button [style.background]="colors.code" (click)="selectColor(colors)"></button>
+          </div> 
+    </div>
+  </mat-menu>
+  <button mat-icon-button *ngIf="!istrash"><img src="assets/image.png"></button>
+  <button mat-icon-button *ngIf="istrash"><img src="assets/restore.png"></button>
+  <button mat-icon-button [matMenuTriggerFor]="moreMenu"><img src="assets/more_vert.png"></button>
+  <mat-menu #moreMenu ="matMenu" XPosition="after" >
+    <button mat-menu-item (click)="onDelete()">DeleteNote</button>
+    <button mat-menu-item >Add Label</button>
+    <button mat-menu-item >Add Drawing</button>
+    <button mat-menu-item >Make a copy</button>
+    <button mat-menu-item >Show CheckBoxes</button>
+  </mat-menu>
+  
+</div>

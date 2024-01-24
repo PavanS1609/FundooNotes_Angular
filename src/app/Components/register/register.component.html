@@ -1,0 +1,78 @@
+<div class="Form">
+    <div class="form-container">
+
+        <h3> <span style="color:dodgerblue;">F</span>
+          <span style="color: red;">u</span>
+          <span style="color:yellow;">n</span>
+          <span style="color: dodgerblue;">d</span>
+          <span style="color:limegreen;">o</span>
+          <span style="color:darkcyan;">o</span>
+          <span style="color:dodgerblue;"> N</span>
+          <span style="color:aquamarine;">o</span>
+          <span style="color:springgreen;">t</span>
+          <span style="color:violet;">e</span>
+          <span style="color:yellowgreen;">s</span></h3>
+        <h1>Create Your Account</h1>
+        <form [formGroup]="RegisterForm" (ngSubmit)="onRegister()">
+        <div>
+            <mat-form-field style="margin-right:20px" appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput formControlName="firstName">
+                <mat-error *ngIf="RegisterForm.get('email')?.hasError('required')">
+                  firstName is required
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label >Last name</mat-label>
+                <input matInput formControlName="lastName" >
+                <mat-error *ngIf="RegisterForm.get('email')?.hasError('required')">
+                  lasstName is required
+                </mat-error>
+              </mat-form-field>
+
+        </div>
+        <div>
+            <mat-form-field style="width: 425px;" appearance="outline">
+                <mat-label>UserName</mat-label>
+                <span class="gmail">@gmail.com</span>
+                <input matInput formControlName="email">
+                <mat-error *ngIf="RegisterForm.get('email')?.hasError('required')">
+                  Email is required
+                </mat-error>
+                <mat-error *ngIf="RegisterForm.get('email')?.hasError('email')">
+                  Please provide a valid email address
+                </mat-error>
+                <mat-hint>You can use letters,Numbers & special characters</mat-hint>
+              </mat-form-field>
+              
+        </div>
+        <div class="Password" >
+            <mat-form-field style="margin-right:20px" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password">
+                <mat-error *ngIf="RegisterForm.get('password')?.hasError('required')">
+                  password is required
+                </mat-error>
+                <mat-error *ngIf="RegisterForm.get('password')?.hasError('minlength')">
+                  password is short
+                </mat-error>
+                <mat-error *ngIf="!RegisterForm.get('password')?.hasError('required') && !RegisterForm.get('password')?.hasError('minlength')">
+                  password is invalid
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="password">
+              </mat-form-field>
+        </div>
+        <div>
+        <mat-hint style="font-size: 11px;">Use 8 or more characters with a max of letters, numbers & symbols</mat-hint>
+      </div>
+        <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+        <div style="margin-top: 20px;">
+            <button (click)="redirectToLogin()" mat-button style="color: blue;">Sign in instead</button>
+            <button mat-raised-button color="primary" style="margin-left: 160px;" >Create Account</button>
+        </div>
+      </form>
+    </div>
+</div>
